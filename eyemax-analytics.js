@@ -30,21 +30,19 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
     }
 }, false );
 
-
-// just a *test* event ...
-/*
-$(document).ready(function() {
-	$("form#MyFormID").each(function() {
-		var jqForm = $(this);
+// === b) Sign up for newsletter on kontakt-impressum page
+jQuery(document).ready(function() {
+	jQuery("form#mc4wp-form-1").each(function() {
+		var jqForm = jQuery(this);
 		var jsForm = this;
 		var action = jqForm.attr("action");
 		jqForm.submit(function(event) { // when someone submits the form(s) - CHANGE TO MATCH the EVENT, could be onclick etc.
 			event.preventDefault(); // don't submit the form yet
-			ga('send', 'event', 'MyCategory', 'MyAction', 'MyLabel', MyValue); // create and send a custom event
+			console.log( "Mailchimp form submitted" );
+			ga( 'send', 'event', 'Newsletter sign up form', 'submit' );
 			setTimeout(function() { // now wait 300 milliseconds...
 				jsForm.submit(); // ... and continue with the form submission
 			},300);
 		});
 	});
 });
-*/
