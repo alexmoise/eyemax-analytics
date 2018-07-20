@@ -1,4 +1,4 @@
-// === a) Fill out the contact form (https://eyemax.ch/kontakt-impressum/) - form has ID 22791
+// === a) Fill out the Kontakt-impressum form - form has ID 22791
 // trigger this for just submitting form
 document.addEventListener( 'wpcf7submit', function( event ) {
     if ( '22791' == event.detail.contactFormId ) {
@@ -14,7 +14,7 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
     }
 }, false );
 
-// === b) Fill out this form here: https://eyemax.ch/preise/ - form has ID 22858
+// === b) Fill out the Preise form - form has ID 22858
 // trigger this for just submitting form
 document.addEventListener( 'wpcf7submit', function( event ) {
     if ( '22858' == event.detail.contactFormId ) {
