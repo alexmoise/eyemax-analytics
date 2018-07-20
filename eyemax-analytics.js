@@ -1,5 +1,22 @@
+// === a) Fill out the contact form (https://eyemax.ch/kontakt-impressum/) - form has ID 22791
+// trigger this for just submitting form
+document.addEventListener( 'wpcf7submit', function( event ) {
+    if ( '22791' == event.detail.contactFormId ) {
+        console.log( "Kontakt-Impressum form submitted" );
+        ga( 'send', 'event', 'Kontakt-Impressum form', 'submit' );
+    }
+}, false );
+// trigger this for successfully sent emails (if the difference from the above is high we'll need to check why mails aren't sent properly)
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    if ( '22791' == event.detail.contactFormId ) {
+        console.log( "Kontakt-Impressum form mail sent" );
+        ga( 'send', 'event', 'Kontakt-Impressum form', 'mail_sent' );
+    }
+}, false );
 
-// a first *test* event ...
+
+// just a *test* event ...
+/*
 $(document).ready(function() {
 	$("form#MyFormID").each(function() {
 		var jqForm = $(this);
@@ -14,3 +31,4 @@ $(document).ready(function() {
 		});
 	});
 });
+*/
