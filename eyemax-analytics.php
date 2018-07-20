@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/alexmoise/eyemax-analytics
  * GitHub Plugin URI: https://github.com/alexmoise/eyemax-analytics
  * Description: A custom plugin to insert Google Analytics code and send some custom events.
- * Version: 0.1.2
+ * Version: 0.1.3
  * Author: Alex Moise
  * Author URI: https://moise.pro
  */
@@ -36,7 +36,7 @@ add_action('wp_head','moeyemx_analytics_code');
 
 // Adding own JS
 function moeyemx_adding_script() {
-	wp_register_script('moeyemx-script', plugins_url('moeyemx.js', __FILE__), array('jquery'), '', true);
+	wp_register_script('moeyemx-script', plugins_url('eyemax-analytics.js', __FILE__), array('jquery'), '', true);
 	wp_enqueue_script('moeyemx-script');
 }
 add_action( 'wp_enqueue_scripts', 'moeyemx_adding_script', 1 ); 
