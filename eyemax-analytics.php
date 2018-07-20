@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/alexmoise/eyemax-analytics
  * GitHub Plugin URI: https://github.com/alexmoise/eyemax-analytics
  * Description: A custom plugin to insert Google Analytics code and send some custom events.
- * Version: 0.1.1
+ * Version: 0.1.2
  * Author: Alex Moise
  * Author URI: https://moise.pro
  */
@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {	exit(0);}
 
 //
 function moeyemx_analytics_code() {
+	$moeyemx_tracking_id = strip_tags(get_option( 'moeyemx_ua_code' ));
     $output_moeyemx_analytics_code="
 		<!-- Google Analytics -->
 		<script>
@@ -21,7 +22,7 @@ function moeyemx_analytics_code() {
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		ga('create', 'UA-xxxxxxxxx-y', 'auto');
+		ga('create', '".$moeyemx_tracking_id."', 'auto');
 		ga('send', 'pageview');
 		</script>
 		<!-- End Google Analytics -->
