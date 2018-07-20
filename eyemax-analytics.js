@@ -14,6 +14,22 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
     }
 }, false );
 
+// === b) Fill out this form here: https://eyemax.ch/preise/ - form has ID 22858
+// trigger this for just submitting form
+document.addEventListener( 'wpcf7submit', function( event ) {
+    if ( '22858' == event.detail.contactFormId ) {
+        console.log( "Preise form submitted" );
+        ga( 'send', 'event', 'Preise form', 'submit' );
+    }
+}, false );
+// trigger this for successfully sent emails (if the difference from the above is high we'll need to check why mails aren't sent properly)
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    if ( '22858' == event.detail.contactFormId ) {
+        console.log( "Preise form mail sent" );
+        ga( 'send', 'event', 'Preise form', 'mail_sent' );
+    }
+}, false );
+
 
 // just a *test* event ...
 /*
