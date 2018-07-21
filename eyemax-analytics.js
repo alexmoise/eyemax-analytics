@@ -52,28 +52,20 @@ jQuery(document).ready(function() {
 
 // === c) add a product to the whishlist
 // ...together with the product ID, maybe we'll use this later on in reporting?
+// trigger this when visitor click the button to add theproduct to his/her whishlidt
 jQuery(document).ready(function() {
 	jQuery('a.add_to_wishlist').click(function(){
 		var wish_product_id = jQuery(this).data('product-id');
-		console.log('Product added to whishlist: ' + wish_product_id);
-		ga( 'send', 'event', 'Forms', 'Sign-up', 'Product: ' + wish_product_id );
+		console.log('Whishlist adding button clicked at product: ' + wish_product_id);
+		ga( 'send', 'event', 'Whishlist', 'add_button_clicked', 'Product: ' + wish_product_id );
 	});
 });
 
-/* // === ONLY A TEST ... 
+// === d) Print the whishlist (https://eyemax.ch/wunschliste/)
+// trigger this when visitor click the button to print his/her whishlist
 jQuery(document).ready(function() {
-	jQuery("form#mc4wp-form-1").each(function() {
-		var jqForm = jQuery(this);
-		var jsForm = this;
-		var action = jqForm.attr("action");
-		jqForm.submit(function(event) { // when someone submits the form(s) - CHANGE TO MATCH the EVENT, could be onclick etc.
-			event.preventDefault(); // don't submit the form yet
-			console.log( "Mailchimp form submitted" );
-			ga( 'send', 'event', 'Newsletter sign up form', 'submit' );
-			setTimeout(function() { // now wait 300 milliseconds...
-				jsForm.submit(); // ... and continue with the form submission
-			},300);
-		});
+	jQuery('#yith-wcwl-form .product-print-button button').click(function(){
+	  console.log('Whishlist print button clicked');
+	  ga( 'send', 'event', 'Whishlist', 'print_button_clicked' );
 	});
 });
-*/
