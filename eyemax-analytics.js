@@ -9,7 +9,7 @@ document.addEventListener( 'wpcf7submit', function( event ) {
 // trigger this for successfully sent emails (if the difference from the above is high we'll need to check why mails aren't sent properly)
 document.addEventListener( 'wpcf7mailsent', function( event ) {
     if ( '22791' == event.detail.contactFormId ) {
-        console.log( "Kontakt-Impressum form mail sent" );
+        console.log( "Kontakt-Impressum form mail sent successfuly" );
         ga( 'send', 'event', 'Kontakt-Impressum form', 'mail_sent' );
     }
 }, false );
@@ -25,7 +25,7 @@ document.addEventListener( 'wpcf7submit', function( event ) {
 // trigger this for successfully sent emails (if the difference from the above is high we'll need to check why mails aren't sent properly)
 document.addEventListener( 'wpcf7mailsent', function( event ) {
     if ( '22858' == event.detail.contactFormId ) {
-        console.log( "Preise form mail sent" );
+        console.log( "Preise form mail sent successfuly" );
         ga( 'send', 'event', 'Preise form', 'mail_sent' );
     }
 }, false );
@@ -36,16 +36,16 @@ jQuery(document).ready(function() {
 	if ( typeof mc4wp !== 'undefined' ) {
 		mc4wp.forms.on('submitted', function(form) {
 			console.log( "Sign up form submitted" );
-			// ga && ga('send', 'event', 'Forms', 'Sign-up', 'Name: ' + form.name + ' ID: ' + form.id);
+			ga && ga( 'send', 'event', 'Sign up form', 'submit' );
 		});
 	}
 });
-// trigger this for successful subscription to list
+// trigger this for successful subscription to list (if the difference from the above is high we'll need to check why users can't subscribe even if they try)
 jQuery(document).ready(function() {
 	if ( typeof mc4wp !== 'undefined' ) {
 		mc4wp.forms.on('subscribed', function(form) {
-			console.log( "Sign up form subscribed" );
-			// ga && ga('send', 'event', 'Forms', 'Sign-up', 'Name: ' + form.name + ' ID: ' + form.id);
+			console.log( "Sign up form subscribed successfuly" );
+			ga && ga( 'send', 'event', 'Sign up form', 'subscribed' );
 		});
 	}
 });
