@@ -78,8 +78,8 @@ jQuery(document).ready(function() {
 		if (href && (this.href.indexOf('preisliste') != -1) ) {  
 			jQuery(this).click(function() {
 				console.log('Clicked on: ' + href);
-				//ga('send','event','External Link','click',extLink);
-				setTimeout(function() { location.href = href; }, 2000);
+				ga( 'send', 'event', 'Pricelist', 'download_clicked' );
+				setTimeout(function() { location.href = href; }, 300);
 				return false;
 			});
 		}
