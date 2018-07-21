@@ -50,7 +50,7 @@ jQuery(document).ready(function() {
 	}
 });
 
-// === c) add a product to the whishlist
+// === c) Add a product to the whishlist
 // ...together with the product ID, maybe we'll use this later on in reporting?
 // trigger this when visitor click the button to add theproduct to his/her whishlidt
 jQuery(document).ready(function() {
@@ -61,11 +61,27 @@ jQuery(document).ready(function() {
 	});
 });
 
-// === d) Print the whishlist (https://eyemax.ch/wunschliste/)
+// === d) Print the whishlist
 // trigger this when visitor click the button to print his/her whishlist
 jQuery(document).ready(function() {
 	jQuery('#yith-wcwl-form .product-print-button button').click(function(){
 	  console.log('Whishlist print button clicked');
 	  ga( 'send', 'event', 'Whishlist', 'print_button_clicked' );
+	});
+});
+
+// === e) Download the price list
+// stop the click, send the event, wait 300ms, then trigger the click to its original location
+jQuery(document).ready(function() {
+	jQuery('a[href*="preisliste"]').each(function() {
+		var href = jQuery(this).attr('href');
+		if (href && (this.href.indexOf('preisliste') != -1) ) {  
+			jQuery(this).click(function() {
+				console.log('Clicked on: ' + href);
+				//ga('send','event','External Link','click',extLink);
+				setTimeout(function() { location.href = href; }, 2000);
+				return false;
+			});
+		}
 	});
 });
