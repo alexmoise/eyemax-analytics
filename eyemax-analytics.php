@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/alexmoise/eyemax-analytics
  * GitHub Plugin URI: https://github.com/alexmoise/eyemax-analytics
  * Description: A custom plugin to insert Google Analytics code and send some custom events.
- * Version: 0.1.7
+ * Version: 0.1.8
  * Author: Alex Moise
  * Author URI: https://moise.pro
  */
