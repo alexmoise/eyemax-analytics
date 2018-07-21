@@ -32,16 +32,23 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 
 // === b) Sign up for newsletter on kontakt-impressum page
 // trigger this for just submitting the form
-mc4wp.forms.on('submitted', function(form) {
-	console.log( "Sign up form submitted" );
-	// ga && ga('send', 'event', 'Forms', 'Sign-up', 'Name: ' + form.name + ' ID: ' + form.id);
+jQuery(document).ready(function() {
+	if ( typeof mc4wp !== 'undefined' ) {
+		mc4wp.forms.on('submitted', function(form) {
+			console.log( "Sign up form submitted" );
+			// ga && ga('send', 'event', 'Forms', 'Sign-up', 'Name: ' + form.name + ' ID: ' + form.id);
+		});
+	}
 });
 // trigger this for successful subscription to list
-mc4wp.forms.on('subscribed', function(form) {
-	console.log( "Sign up form subscribed" );
-	// ga && ga('send', 'event', 'Forms', 'Sign-up', 'Name: ' + form.name + ' ID: ' + form.id);
+jQuery(document).ready(function() {
+	if ( typeof mc4wp !== 'undefined' ) {
+		mc4wp.forms.on('subscribed', function(form) {
+			console.log( "Sign up form subscribed" );
+			// ga && ga('send', 'event', 'Forms', 'Sign-up', 'Name: ' + form.name + ' ID: ' + form.id);
+		});
+	}
 });
-
 
 /*
 jQuery(document).ready(function() {
