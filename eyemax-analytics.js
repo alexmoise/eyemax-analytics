@@ -50,7 +50,17 @@ jQuery(document).ready(function() {
 	}
 });
 
-/*
+// === c) add a product to the whishlist
+// ...together with the product ID, maybe we'll use this later on in reporting?
+jQuery(document).ready(function() {
+	jQuery('a.add_to_wishlist').click(function(){
+		var wish_product_id = jQuery(this).data('product-id');
+		console.log('Product added to whishlist: ' + wish_product_id);
+		ga( 'send', 'event', 'Forms', 'Sign-up', 'Product: ' + wish_product_id );
+	});
+});
+
+/* // === ONLY A TEST ... 
 jQuery(document).ready(function() {
 	jQuery("form#mc4wp-form-1").each(function() {
 		var jqForm = jQuery(this);
